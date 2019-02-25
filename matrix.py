@@ -27,8 +27,8 @@ def print_matrix( matrix ):
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
-    matrix[:] = new_matrix(len(matrix[0]), len(matrix[0]))
-    for x in range(len(matrix[0])):
+    matrix[:] = new_matrix(len(matrix), len(matrix))
+    for x in range(len(matrix)):
         matrix[x][x] = 1
     return matrix
 
@@ -77,25 +77,4 @@ def new_matrix(rows = 4, cols = 4):
             m[c].append( 0 )
     return m
 
-diagnostic = False
-if diagnostic:
-    test = new_matrix(2,6)
-    for row in range(len(test)):
-        for col in range(len(test[row])):
-            test[row][col] = col + row
-    copy_test = new_matrix(2,6)
-    for row in range(len(copy_test)):
-        for col in range(len(copy_test[row])):
-            copy_test[row][col] = col + row
-    print_matrix(copy_test)
-    ident(copy_test)
-    print_matrix(copy_test)
-    test2 = new_matrix(6,2)
-    for row in range(len(test2)):
-        for col in range(len(test2[row])):
-            test2[row][col] = row + col * (row+2)
-    print_matrix(test2)
-    print_matrix(copy_test)
-    print_matrix(matrix_mult(copy_test,test2))
-    print_matrix(test)
 

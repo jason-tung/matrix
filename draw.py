@@ -3,7 +3,7 @@ from matrix import *
 
 
 def draw_lines( matrix, screen, color ):
-    for horizontal_indices in range(0, range(len(matrix)), 2):
+    for horizontal_indices in range(0, len(matrix[0]), 2):
         v1 = getVector(matrix, horizontal_indices, "down")
         v2 = getVector(matrix, horizontal_indices + 1, "down")
         draw_line(v1[0],v1[1],v2[0],v2[1], screen, color)
